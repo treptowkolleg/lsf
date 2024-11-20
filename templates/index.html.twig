@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container mb-3">
+        <div class="row title">
+            <h1 class="text-htw">LSF <span class="fw-light">light</span></h1>
+        </div>
+    </div>
+    <div class="container">
+        {% for name, day in events %}
+            <div class="schedule mt-5">
+                <div class="row headline">
+                    <h2 class="display-6 text-uppercase my-3">{{ name }}</h2>
+                </div>
+                {% for event in day %}
+                <div class="row row-striped">
+                    <div class="col-12">
+                        <h4 class="text-uppercase"><strong>{{ event.veranstaltung }}</strong></h4>
+                        <p>{{ event.typ }}</p>
+                        <ul class="list-inline mb-1">
+                            <li class="list-inline-item"><i class="text-htw fa fa-calendar-o" aria-hidden="true"></i> {{ event.tag }}</li>
+                            <li class="list-inline-item"><i class="text-htw fa fa-clock-o" aria-hidden="true"></i> {{ event.beginn }} - {{ event.ende }} Uhr</li>
+                            <li class="list-inline-item"><i class="text-htw fa fa-location-arrow" aria-hidden="true"></i> {{ event.ort }}</li>
+                        </ul>
+                    </div>
+                </div>
+                {% else %}
+                    <p>Keine Veranstaltungen gefunden!</p>
+            {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

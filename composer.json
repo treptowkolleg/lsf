@@ -1,0 +1,14 @@
+{
+  "author": "Benjamin Wagner",
+  "type": "project",
+  "license": "LGPL-2.0-or-later",
+  "autoload": {
+    "psr-4": {
+      "LSR\\" : "src/"
+    }
+  },
+  "require": {
+    "php" : ">=8.2",
+    "twig/twig": "^3.15"
+  }
+}
