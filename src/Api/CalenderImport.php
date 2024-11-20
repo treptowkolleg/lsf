@@ -44,16 +44,19 @@ class CalenderImport
         $endDate = null;
         $frequency = null;
 
-        $stream = fopen($this->url, "r");
-        $content = '';
-        if(!$stream){
+        $arrContextOptions=array(
+            "ssl"=>array(
+                "verify_peer"=>false,
+                "verify_peer_name"=>false,
+            ),
+        );
+
+        $content = file_get_contents($this->url, false, stream_context_create($arrContextOptions));
+
+        if(!$content){
             echo "Da stimmt was nicht!";
             exit();
         }
-        while (!feof($stream)) {
-            $content .= fgets($stream);
-        }
-
 
         $result = [];
         preg_match_all('/(BEGIN:VEVENT.*?END:VEVENT)/si', $content, $result, PREG_PATTERN_ORDER);
