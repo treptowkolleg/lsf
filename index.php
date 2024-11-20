@@ -13,7 +13,7 @@ const project_root = __DIR__;
 $loader = new FilesystemLoader(project_root.'/templates');
 $twig = new Environment($loader, [
     'cache' => project_root.'/var/cache',
-    'debug' => false,
+    'debug' => true,
 ]);
 
 
