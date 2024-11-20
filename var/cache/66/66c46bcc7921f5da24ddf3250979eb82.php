@@ -55,56 +55,51 @@ class __TwigTemplate_6ab7b7a7fd40aa40df34a51a41b04db8 extends Template
     {
         $macros = $this->macros;
         // line 4
-        yield "    <div class=\"container mb-3\">
-        <div class=\"row title\">
-            <h1 class=\"text-htw\">LSF <span class=\"fw-light\">light</span></h1>
-        </div>
-    </div>
-    <div class=\"container\">
+        yield "    <div class=\"container\">
         ";
-        // line 10
+        // line 5
         $context['_parent'] = $context;
         $context['_seq'] = CoreExtension::ensureTraversable(($context["events"] ?? null));
         foreach ($context['_seq'] as $context["name"] => $context["day"]) {
-            // line 11
+            // line 6
             yield "            <div class=\"schedule mt-5\">
                 <div class=\"row headline\">
                     <h2 class=\"display-6 text-uppercase my-3\">";
-            // line 13
+            // line 8
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["name"], "html", null, true);
             yield "</h2>
                 </div>
                 ";
-            // line 15
+            // line 10
             $context['_parent'] = $context;
             $context['_seq'] = CoreExtension::ensureTraversable($context["day"]);
             $context['_iterated'] = false;
             foreach ($context['_seq'] as $context["_key"] => $context["event"]) {
-                // line 16
+                // line 11
                 yield "                <div class=\"row row-striped\">
                     <div class=\"col-12\">
                         <h4 class=\"text-uppercase\"><strong>";
-                // line 18
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "veranstaltung", [], "any", false, false, false, 18), "html", null, true);
+                // line 13
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "veranstaltung", [], "any", false, false, false, 13), "html", null, true);
                 yield "</strong></h4>
                         <p>";
-                // line 19
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "typ", [], "any", false, false, false, 19), "html", null, true);
+                // line 14
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "typ", [], "any", false, false, false, 14), "html", null, true);
                 yield "</p>
                         <ul class=\"list-inline mb-1\">
                             <li class=\"list-inline-item\"><i class=\"text-htw fa fa-calendar-o\" aria-hidden=\"true\"></i> ";
-                // line 21
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "tag", [], "any", false, false, false, 21), "html", null, true);
+                // line 16
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "tag", [], "any", false, false, false, 16), "html", null, true);
                 yield "</li>
                             <li class=\"list-inline-item\"><i class=\"text-htw fa fa-clock-o\" aria-hidden=\"true\"></i> ";
-                // line 22
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "beginn", [], "any", false, false, false, 22), "html", null, true);
+                // line 17
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "beginn", [], "any", false, false, false, 17), "html", null, true);
                 yield " - ";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "ende", [], "any", false, false, false, 22), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "ende", [], "any", false, false, false, 17), "html", null, true);
                 yield " Uhr</li>
                             <li class=\"list-inline-item\"><i class=\"text-htw fa fa-location-arrow\" aria-hidden=\"true\"></i> ";
-                // line 23
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "ort", [], "any", false, false, false, 23), "html", null, true);
+                // line 18
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["event"], "ort", [], "any", false, false, false, 18), "html", null, true);
                 yield "</li>
                         </ul>
                     </div>
@@ -113,21 +108,21 @@ class __TwigTemplate_6ab7b7a7fd40aa40df34a51a41b04db8 extends Template
                 $context['_iterated'] = true;
             }
             if (!$context['_iterated']) {
-                // line 28
+                // line 23
                 yield "                    <p>Keine Veranstaltungen gefunden!</p>
             ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['event'], $context['_parent'], $context['_iterated']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 30
+            // line 25
             yield "            </div>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['name'], $context['day'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 32
+        // line 27
         yield "    </div>
 ";
         yield from [];
@@ -154,7 +149,7 @@ class __TwigTemplate_6ab7b7a7fd40aa40df34a51a41b04db8 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  131 => 32,  124 => 30,  117 => 28,  107 => 23,  101 => 22,  97 => 21,  92 => 19,  88 => 18,  84 => 16,  79 => 15,  74 => 13,  70 => 11,  66 => 10,  58 => 4,  51 => 3,  40 => 1,);
+        return array (  126 => 27,  119 => 25,  112 => 23,  102 => 18,  96 => 17,  92 => 16,  87 => 14,  83 => 13,  79 => 11,  74 => 10,  69 => 8,  65 => 6,  61 => 5,  58 => 4,  51 => 3,  40 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -162,11 +157,6 @@ class __TwigTemplate_6ab7b7a7fd40aa40df34a51a41b04db8 extends Template
         return new Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class=\"container mb-3\">
-        <div class=\"row title\">
-            <h1 class=\"text-htw\">LSF <span class=\"fw-light\">light</span></h1>
-        </div>
-    </div>
     <div class=\"container\">
         {% for name, day in events %}
             <div class=\"schedule mt-5\">

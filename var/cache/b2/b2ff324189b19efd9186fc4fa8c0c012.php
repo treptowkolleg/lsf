@@ -83,11 +83,22 @@ class __TwigTemplate_1c165058bf9c57a61173d11b056ea3e3 extends Template
     </style>
 </head>
 <body class=\"bg-light\">
+<header class=\"bg-white\">
+    <div class=\"container mb-3\">
+        <div class=\"row\">
+            <div class=\"col-12\">
+                <h1 class=\"text-htw\">LSF <span class=\"fw-light\">light</span></h1>
+            </div>
+        </div>
+    </div>
+</header>
+
 ";
-        // line 44
+        // line 54
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 45
-        yield "<footer class=\"fixed-bottom title\">
+        // line 55
+        yield "
+<footer class=\"fixed-bottom bg-white\">
     <div class=\"container\">
         <div class=\"row\">
             <div class=\"col-12\">
@@ -101,7 +112,7 @@ class __TwigTemplate_1c165058bf9c57a61173d11b056ea3e3 extends Template
         yield from [];
     }
 
-    // line 44
+    // line 54
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -124,7 +135,7 @@ class __TwigTemplate_1c165058bf9c57a61173d11b056ea3e3 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  105 => 44,  90 => 45,  88 => 44,  43 => 1,);
+        return array (  116 => 54,  100 => 55,  98 => 54,  43 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -172,8 +183,19 @@ class __TwigTemplate_1c165058bf9c57a61173d11b056ea3e3 extends Template
     </style>
 </head>
 <body class=\"bg-light\">
+<header class=\"bg-white\">
+    <div class=\"container mb-3\">
+        <div class=\"row\">
+            <div class=\"col-12\">
+                <h1 class=\"text-htw\">LSF <span class=\"fw-light\">light</span></h1>
+            </div>
+        </div>
+    </div>
+</header>
+
 {% block body %}{% endblock %}
-<footer class=\"fixed-bottom title\">
+
+<footer class=\"fixed-bottom bg-white\">
     <div class=\"container\">
         <div class=\"row\">
             <div class=\"col-12\">
