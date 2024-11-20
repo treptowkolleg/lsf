@@ -45,7 +45,7 @@ class CalenderImport
         $frequency = null;
 
         $content = file_get_contents($this->url);
-        echo $content;
+        if(!$content) echo "Da Stimmt was nicht!";
         $result = [];
         preg_match_all('/(BEGIN:VEVENT.*?END:VEVENT)/si', $content, $result, PREG_PATTERN_ORDER);
 
