@@ -46,10 +46,15 @@ class CalenderImport
 
         $stream = fopen($this->url, "r");
         $content = '';
+        if(!$stream){
+            echo "Da stimmt was nicht!";
+            exit();
+        }
         while (!feof($stream)) {
             $content .= fgets($stream);
         }
-        if(!$content) echo "Da stimmt was nicht!";
+
+
         $result = [];
         preg_match_all('/(BEGIN:VEVENT.*?END:VEVENT)/si', $content, $result, PREG_PATTERN_ORDER);
 
