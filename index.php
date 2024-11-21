@@ -8,12 +8,23 @@ use Twig\Error\SyntaxError;
 use Twig\Loader\FilesystemLoader;
 
 require_once 'vendor/autoload.php';
-const project_root = __DIR__;
+const project_root = __DIR__ . DIRECTORY_SEPARATOR;
 
-$loader = new FilesystemLoader(project_root.'/templates');
+function makeDir(string $path): string
+{
+    $path = trim($path,"/");
+    if(!is_dir($dirPath = project_root . $path)){
+        if(!mkdir($dirPath, recursive: true)) {
+            exit("Fehler beim Erstellen des Ordners $dirPath");
+        }
+    }
+    return str_replace("/", DIRECTORY_SEPARATOR, $dirPath . DIRECTORY_SEPARATOR);
+}
+
+$loader = new FilesystemLoader(makeDir("templates"));
 $twig = new Environment($loader, [
-    'cache' => project_root.'/var/cache',
-    'debug' => false,
+    'cache' => makeDir('/var/cache'),
+    'debug' => true,
 ]);
 
 

@@ -3,9 +3,9 @@
 {% block body %}
     <div class="container">
         {% for name, day in events %}
-            <div class="schedule mt-5">
-                <div class="row headline">
-                    <h2 class="display-6 text-uppercase my-3">{{ name }}</h2>
+            <div class="schedule bg-white mb-5">
+                <div class="row headline sticky-top" style="top:41px">
+                    <h2 class="h6 text-uppercase my-2">{{ name }}</h2>
                 </div>
                 {% for event in day %}
                 <div class="row row-striped">

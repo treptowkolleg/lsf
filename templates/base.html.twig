@@ -17,10 +17,22 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <style>
         body {
+            margin-top: 5em;
             margin-bottom: 5em;
         }
 
-        .row-striped:nth-of-type(odd), .headline{
+        footer{
+            background-color: #76B900;
+            color: #FFF;
+        }
+
+        .headline{
+            background-color: #FFF;
+            color: #76B900;
+            border-bottom: 4px #76B900 solid;
+        }
+
+        .row-striped:nth-of-type(odd){
             background-color: #76B90010;
             border-left: 4px #76B900 solid;
         }
@@ -41,8 +53,8 @@
     </style>
 </head>
 <body class="bg-light">
-<header class="bg-white">
-    <div class="container mb-3">
+<header class="bg-white fixed-top">
+    <div class="container">
         <div class="row">
             <div class="col-12">
                 <h1 class="text-htw">LSF <span class="fw-light">light</span></h1>
@@ -53,7 +65,7 @@
 
 {% block body %}{% endblock %}
 
-<footer class="fixed-bottom bg-white">
+<footer class="fixed-bottom">
     <div class="container">
         <div class="row">
             <div class="col-12">
