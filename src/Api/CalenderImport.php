@@ -90,7 +90,9 @@ class CalenderImport
                 $event['ort'] = array_pop($location);
             }
             if (preg_match('/SUMMARY:(.*)CATEGORIES/si', $result[0][$i], $regs)) {
-                $event['veranstaltung'] = str_replace("  ", " ", str_replace("\r\n", "", $regs[1]));
+                $va = str_replace("  ", " ", str_replace("\r\n", "", $regs[1]));
+                $pos = strpos($va,"-");
+                $event['veranstaltung'] = substr($va,$pos+1);
             }
             if (preg_match('/CATEGORIES:(.*)END:VEVENT/si', $result[0][$i], $regs)) {
                 $event['typ'] = str_replace("  ", " ", str_replace("\r\n", "", $regs[1]));
