@@ -101,7 +101,10 @@ class CalenderImport
             } else {
                 $dateRange = new DatePeriod($startDate, new DateInterval("P{$frequency}D"), $tomorrow);
 
-                foreach($dateRange as $date){
+                // Reihenfolge umkehren, da das Ergebnis schneller da ist.
+                $dates = array_reverse(iterator_to_array($dateRange));
+
+                foreach($dates as $date){
                     if($date->format("d.m.Y") == $now->format("d.m.Y")){
                         $events["Heute"][] = $event;
                         break;
@@ -110,6 +113,7 @@ class CalenderImport
                         $events["Morgen"][] = $event;
                         break;
                     }
+                    break;
                 }
             }
 
