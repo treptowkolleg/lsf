@@ -35,7 +35,7 @@ class CalenderImport
     public function import(): array
     {
         $event = [];
-        $events = [];
+        $events = ["Heute" => [], "Morgen" => []];
         $timezone = new DateTimeZone("Europe/Berlin");
         $now = new DateTime("now", $timezone);
         $currentDate = new DateTime("+ 1 days", $timezone);
