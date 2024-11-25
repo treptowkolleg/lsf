@@ -7,7 +7,7 @@
                 <div class="row headline sticky-top" style="top:50px">
                     <h2 class="h6 text-uppercase my-2">{{ name }}</h2>
                 </div>
-                {% for event in day %}
+                {% for event in day|sort((a, b) => a.beginn <=> b.beginn) %}
                 <div class="row row-striped">
                     <div class="col-12">
                         <h4 class="h5 text-uppercase"><strong>{{ event.veranstaltung }}</strong></h4>
