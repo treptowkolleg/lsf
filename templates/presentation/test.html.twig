@@ -1,0 +1,143 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h2>Relationale Datenbanken</h2>
+                <h3>Übersicht</h3>
+                <img src="/assets/images/ORM.png" alt="ORM">
+            </section>
+            <section>
+                <h3>Relationen</h3>
+                <p>Was sind Relationen?</p>
+                <ul>
+                    <li>Relationen sind Tabellen, die aus Spalten und Zeilen bestehen.</li>
+                    <li>Die Spalten stellen die Attribute mit definiertem <b>Datentyp</b> dar.</li>
+                    <li>Die Zeilen stellen sogenannte <b>Tupel</b> dar.</li>
+                    <li>Jeder Tupel enthält ein oder mehrere Attributwerte.</li>
+                </ul>
+                <svg xmlns="http://www.w3.org/2000/svg" width="600" height="300">
+                    <!-- Tabellenrahmen -->
+                    <rect x="50" y="50" width="500" height="200" fill="#f9f9f9" stroke="#000" stroke-width="2"/>
+
+                    <!-- Tabellenkopf -->
+                    <rect x="50" y="50" width="500" height="50" fill="#dce6f2" stroke="#000" stroke-width="2"/>
+
+                    <!-- Attribute -->
+                    <text x="100" y="80" font-family="Arial" font-size="14" fill="#000">ID</text>
+                    <text x="200" y="80" font-family="Arial" font-size="14" fill="#000">Name</text>
+                    <text x="300" y="80" font-family="Arial" font-size="14" fill="#000">Alter</text>
+                    <text x="400" y="80" font-family="Arial" font-size="14" fill="#000">Stadt</text>
+
+                    <!-- Zeilen-Trennlinie -->
+                    <line x1="50" y1="100" x2="550" y2="100" stroke="#000" stroke-width="2"/>
+
+                    <!-- Datenzeilen -->
+                    <text x="100" y="140" font-family="Arial" font-size="14" fill="#000">1</text>
+                    <text x="200" y="140" font-family="Arial" font-size="14" fill="#000">Anna</text>
+                    <text x="300" y="140" font-family="Arial" font-size="14" fill="#000">25</text>
+                    <text x="400" y="140" font-family="Arial" font-size="14" fill="#000">Berlin</text>
+
+                    <text x="100" y="180" font-family="Arial" font-size="14" fill="#000">2</text>
+                    <text x="200" y="180" font-family="Arial" font-size="14" fill="#000">Ben</text>
+                    <text x="300" y="180" font-family="Arial" font-size="14" fill="#000">30</text>
+                    <text x="400" y="180" font-family="Arial" font-size="14" fill="#000">Hamburg</text>
+
+                    <text x="100" y="220" font-family="Arial" font-size="14" fill="#000">3</text>
+                    <text x="200" y="220" font-family="Arial" font-size="14" fill="#000">Clara</text>
+                    <text x="300" y="220" font-family="Arial" font-size="14" fill="#000">28</text>
+                    <text x="400" y="220" font-family="Arial" font-size="14" fill="#000">München</text>
+                </svg>
+                <p>
+                    Jede SQL-Abfrage liefert grundsätzlich auch eine (neue) Relation.
+                </p>
+            </section>
+            <section>
+                <h3>Struktur einer Relation</h3>
+                <p>
+                    Diese Relation hat drei <b>Felder</b> bzw. <b>Attribute</b>, nämlich <i>id</i>, <i>firstname</i> und <i>lastname</i>.
+                </p>
+                <p>
+                    <i>id</i> ist hier der <b>PRIMARY KEY</b>, anhand dessen jeder Tupel eindeutig identifiziert werden kann. <i>id</i> ist vom Datentyp <b>Integer</b> mit einer maximalen Länge von <b>11</b>.
+                </p>
+                <p>
+                    <i>firstname</i> und <i>lastname</i> sind vom Datentyp <b>String</b> mit einer variablen Länge von 50 Zeichen.
+                </p>
+                <img src="/assets/images/struct_rel.png" alt="Struktur einer Relation">
+            </section>
+            <section>
+                <h3>Namenskonventionen</h3>
+                <p>
+                    Es existieren keine offiziellen Namenskonventionen für relationale Datenbanken, jedoch zeigt sich eine Tendenz zu folgender Schreibweise (da SQL nicht Groß- und Kleinschreibung unterscheidet):
+                </p>
+                <ul>
+                    <li>Tabellen- und Attributnamen werden kleingeschrieben</li>
+                    <li>Worte werden durch Unterstriche getrennt (snake_case)</li>
+                    <li>Jede Relation enthält einen <b>PRIMARY KEY</b> vom Typ <b>int</b></li>
+                    <li>Es sind nur Alpha-Zeichen (a-z) nach <b>UTF8</b>-Standard erlaubt</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Tupel einer Relation</h3>
+                <p>
+                    Die Relation enthält aktuell <b>2 Tupel</b> (Datensätze).
+                </p>
+                <ul>
+                    <li>Die Attribute stellen den Definitionsbereich $D$ dar.</li>
+                    <li>Die Attributwerte der Tupel stellen den Wertebereich $W$ dar.</li>
+                    <li>Ein Tupel $T_i$ ist eine Teilmenge aller vorhanden Tupel: $T_i \subset T_n$</li>
+                </ul>
+                <img src="/assets/images/img.png" alt="Tupel einer Relation">
+            </section>
+            <section>
+                <h3>Selektion</h3>
+                <p>
+                    Tupel können durch <b>Festlegen von Bedingungen</b> "selektiert" werden.
+                </p>
+                <pre>
+                    <code>
+    SELECT * FROM teacher WHERE firstname = "Benjamin";
+                    </code>
+                </pre>
+                <img src="/assets/images/img_1.png" alt="Selektion">
+            </section>
+            <section>
+                <h3>Selektion</h3>
+                <p>
+                    Das <b>Selektieren</b> geschieht jedoch durch den Ausruck <code>WHERE</code>, der eine Bedingung einleitet.
+                </p>
+                <p>
+                    Der Ausdruck <code>SELECT</code> hingegen stellt die <b>Projektion</b> dar.
+                </p>
+            </section>
+            <section>
+                <h3>Projektion</h3>
+                <p>
+                    Durch Projektion legen wir fest, welche Attribute in der <i>Ergebnisrelation</i> enthalten sind.<br>Beispiel:
+                </p>
+                <pre>
+                    <code>
+    SELECT firstname FROM teacher;
+                    </code>
+                </pre>
+                <img src="/assets/images/img_2.png" alt="Projektion">
+            </section>
+            <section>
+                <h3>Projektion</h3>
+                <p>
+                    Anfangs wurde gesagt, dass jede SQL-Abfrage in einer neuen Relation mündet. Hier ein Beispiel:
+                </p>
+                <pre>
+                    <code>
+    SELECT 5 * 2 AS "Ergebnis aus 5 x 2";
+                    </code>
+                </pre>
+                <img src="/assets/images/img_3.png" alt="Projektion ohne zugrundeliegende Relation">
+            </section>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}{% endblock %}
