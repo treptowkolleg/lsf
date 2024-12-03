@@ -8,9 +8,9 @@ RewriteEngine on
 RewriteBase /
 
 # Deliver the folder or file directly if it exists on the server
-RewriteCond %{REQUEST_URI} \.(js|css|jpe?g|gif|png|bmp|ico)$ [NC]
+
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-
+RewriteCond %{REQUEST_URI} \.(js|css|jpe?g|gif|png|bmp|ico)$ [NC]
 # Push every request to index.php
 RewriteRule ^(.*)$ index.php [QSA]
