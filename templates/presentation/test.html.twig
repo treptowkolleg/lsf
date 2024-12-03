@@ -10,6 +10,22 @@
                 <img src="/assets/images/ORM.png" alt="ORM">
             </section>
             <section>
+                <h3>Vektoren und Relationen</h3>
+                <p>
+                    Ein Vektor im Raum $\mathbb{R}^3$ lässt sich darstellen als $\vec{a}=(x,y,z)$. Es handelt sich
+                    also dabei um einen Tupel mit $3$ Komponenten.
+                </p>
+                <p>Definieren wir nun Datentypen für die Komponenten, nämlich:</p>
+                <ul>
+                    <li>$x \to \text{id}$: <code>int</code></li>
+                    <li>$y \to \text{firstname}$: <code>varchar(50)</code></li>
+                    <li>$z \to \text{lastname}$: <code>varchar(50)</code></li>
+                </ul>
+                <p>
+                    Vektoren lassen sich auch tabellarisch bzw. <b>als Relation</b> darstellen, indem wir die Komponenten als Spalten und deren Wertepaare als Zeilen betrachten.
+                </p>
+            </section>
+            <section>
                 <h3>Relationen</h3>
                 <p>Was sind Relationen?</p>
                 <ul>
@@ -25,31 +41,28 @@
                     <!-- Tabellenkopf -->
                     <rect x="50" y="50" width="500" height="50" fill="#dce6f2" stroke="#000" stroke-width="2"/>
 
-                    <!-- Attribute -->
-                    <text x="100" y="80" font-family="Arial" font-size="14" fill="#000">ID</text>
-                    <text x="200" y="80" font-family="Arial" font-size="14" fill="#000">Name</text>
-                    <text x="300" y="80" font-family="Arial" font-size="14" fill="#000">Alter</text>
-                    <text x="400" y="80" font-family="Arial" font-size="14" fill="#000">Stadt</text>
+                    <!-- Spaltenüberschriften -->
+                    <text x="100" y="80" font-family="Arial" font-size="14" fill="#000">id (PK)</text>
+                    <text x="250" y="80" font-family="Arial" font-size="14" fill="#000">firstname</text>
+                    <text x="400" y="80" font-family="Arial" font-size="14" fill="#000">lastname</text>
 
                     <!-- Zeilen-Trennlinie -->
                     <line x1="50" y1="100" x2="550" y2="100" stroke="#000" stroke-width="2"/>
 
-                    <!-- Datenzeilen -->
+                    <!-- Beispiel-Datenzeilen -->
                     <text x="100" y="140" font-family="Arial" font-size="14" fill="#000">1</text>
-                    <text x="200" y="140" font-family="Arial" font-size="14" fill="#000">Anna</text>
-                    <text x="300" y="140" font-family="Arial" font-size="14" fill="#000">25</text>
-                    <text x="400" y="140" font-family="Arial" font-size="14" fill="#000">Berlin</text>
+                    <text x="250" y="140" font-family="Arial" font-size="14" fill="#000">Anna</text>
+                    <text x="400" y="140" font-family="Arial" font-size="14" fill="#000">Smith</text>
 
                     <text x="100" y="180" font-family="Arial" font-size="14" fill="#000">2</text>
-                    <text x="200" y="180" font-family="Arial" font-size="14" fill="#000">Ben</text>
-                    <text x="300" y="180" font-family="Arial" font-size="14" fill="#000">30</text>
-                    <text x="400" y="180" font-family="Arial" font-size="14" fill="#000">Hamburg</text>
+                    <text x="250" y="180" font-family="Arial" font-size="14" fill="#000">Ben</text>
+                    <text x="400" y="180" font-family="Arial" font-size="14" fill="#000">Jones</text>
 
                     <text x="100" y="220" font-family="Arial" font-size="14" fill="#000">3</text>
-                    <text x="200" y="220" font-family="Arial" font-size="14" fill="#000">Clara</text>
-                    <text x="300" y="220" font-family="Arial" font-size="14" fill="#000">28</text>
-                    <text x="400" y="220" font-family="Arial" font-size="14" fill="#000">München</text>
+                    <text x="250" y="220" font-family="Arial" font-size="14" fill="#000">Clara</text>
+                    <text x="400" y="220" font-family="Arial" font-size="14" fill="#000">Taylor</text>
                 </svg>
+
                 <p>
                     Jede SQL-Abfrage liefert grundsätzlich auch eine (neue) Relation.
                 </p>
